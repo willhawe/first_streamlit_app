@@ -32,7 +32,7 @@ fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_c
 # normalize
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # write your own comment - what does this do?
-xx = streamlit.dataframe(fruityvice_normalized)
+streamlit.dataframe(fruityvice_normalized)
 
 
 import snowflake.connector
@@ -47,4 +47,4 @@ streamlit.dataframe(my_data_rows)
 #allow end user to add fruit to the list
 add_my_fruit = streamlit.text_input("What fruit would you like to add?")
 streamlit.write('The user entered ', fruit_choice2)
-streamlit.write('Thank you for adding ', + fruit_choice2)
+xx = streamlit.write('Thank you for adding ', + fruit_choice2)
